@@ -737,7 +737,7 @@ async def start(update, context): # 当用户输入/start时，返回文本
     else:
         update_language_status("English", chat_id=convo_id)
     message = (
-        f"Hi `{user.username}` ! I am an Assistant, a large language model trained by OpenAI. I will do my best to help answer your questions.\n\n"
+        f"Hello `{user.username}`! What shall we talk about today?\n\n"
     )
     if len(context.args) == 2 and context.args[1].startswith("sk-"):
         api_url = context.args[0]
@@ -789,14 +789,14 @@ async def unknown(update, context): # 当用户输入未知命令时，返回文
 
 async def post_init(application: Application) -> None:
     await application.bot.set_my_commands([
-        BotCommand('info', 'Basic information'),
-        BotCommand('reset', 'Reset the bot'),
-        BotCommand('start', 'Start the bot'),
-        BotCommand('en2zh', 'Translate to Chinese'),
-        BotCommand('zh2en', 'Translate to English'),
+        BotCommand('reset', 'Reset memory for new topic'),
+        BotCommand('en2zh', 'Translate English to Chinese (long press)'),
+        BotCommand('zh2en', 'Translate Chinese to English (long press)'),
     ])
     description = (
-        "I am an Assistant, a large language model trained by OpenAI. I will do my best to help answer your questions."
+        "✅ Summarize website urls\n\n"
+        "✅ Answer questions from audio, PDF, TXT, MD, python docs, just upload!\n\n"
+        "✅ Type [Search] at the beginning of your question to search the internet for answers!"
     )
     await application.bot.set_my_description(description)
 
