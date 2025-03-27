@@ -736,8 +736,9 @@ async def start(update, context): # 当用户输入/start时，返回文本
         update_language_status("Russian", chat_id=convo_id)
     else:
         update_language_status("English", chat_id=convo_id)
+    name = user.first_name or "there"
     message = (
-        f"Hello `{user.username}`! What shall we talk about today?\n\n"
+        f"Hello `{name}`! What shall we talk about today?\n\n"
     )
     if len(context.args) == 2 and context.args[1].startswith("sk-"):
         api_url = context.args[0]
