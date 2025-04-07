@@ -66,16 +66,10 @@ LANGUAGE = os.environ.get('LANGUAGE', 'English')
 
 LANGUAGES = {
     "English": False,
-    "Simplified Chinese": False,
-    "Traditional Chinese": False,
-    "Russian": False,
 }
 
 LANGUAGES_TO_CODE = {
     "English": "en",
-    "Simplified Chinese": "zh",
-    "Traditional Chinese": "zh-hk",
-    "Russian": "ru",
 }
 
 current_date = datetime.now()
